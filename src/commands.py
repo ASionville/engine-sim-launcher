@@ -1,8 +1,13 @@
 from tkinter.filedialog import *
 from tkinter.messagebox import *
-import os
+import os, sys
 
-PATH = os.path.dirname(os.path.abspath(__file__))
+if getattr(sys, 'frozen', False):
+    PATH = os.path.dirname(sys.executable)
+elif __file__:
+    PATH = os.path.dirname(__file__)
+
+print(PATH)
 
 def start_game():
     # Launch game executable : /bin/engine-sim-app.exe
@@ -10,10 +15,11 @@ def start_game():
     game_file = os.path.join(PATH, "bin/engine-sim-app.exe")
     if not os.path.exists(game_file):
         showerror("Error", "Game executable not found\nPlease put the launcher in the game root directory")
-    # Launch game executable
-    os.chdir("bin/")
-    os.system("engine-sim-app.exe")
-    os.chdir("../")
+    else:
+        # Launch game executable
+        os.chdir("bin/")
+        os.system("engine-sim-app.exe")
+        os.chdir("../")
 
 def get_engine_engine_line(engine_file):
     # Get the line from .mr file that contains "engine engine"
@@ -83,5 +89,6 @@ def change_engine():
             modify_main_mr(engine_file_name, engine_name)
         except Exception as e:
             showerror("Error", "Error while changing engine")
+            print(e)
         else :
             showinfo("Success", "Engine changed")
