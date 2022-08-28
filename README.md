@@ -2,7 +2,7 @@
 
 This is a launcher for [Ange Yaghi's Engine Simulator](https://github.com/ange-yaghi/engine-sim)
 
-All the credits of the game belongs to its creator
+All the credits of the simulator belongs to its creator
 
 The fonts used in this project : Silkscreen... are the property of their owner/creator
 
