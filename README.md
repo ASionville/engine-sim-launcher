@@ -1,4 +1,4 @@
-# engine-sim-launcher
+# Engine Sim Launcher
 
 This is a launcher for [Ange Yaghi's Engine Simulator](https://github.com/ange-yaghi/engine-sim)
 
