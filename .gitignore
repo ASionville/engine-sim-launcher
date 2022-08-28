@@ -1,2 +1,4 @@
 src/assets/
 src/basic/
+*.pyc
+src/bin/
